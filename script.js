@@ -345,13 +345,14 @@ function loadMessages(messages) {
             row.classList.add("in");
         }
         chat.appendChild(row);
-        if (lastElement && lastDirection !== msg.direction) {
-            lastElement.classList.add("before");
+        if (!lastElement) {
+            element.classList.add("before");
+        } else if (lastDirection !== msg.direction) {
+            element.classList.add("before");
         }
         lastElement = element;
         lastDirection = msg.direction;
     }
-    lastElement.classList.add("before");
 }
 
 function init() {
