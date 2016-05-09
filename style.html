@@ -1,0 +1,125 @@
+<link rel="import" href="bower_components/paper-styles/color.html">
+<link rel="import" href="bower_components/paper-styles/shadow.html">
+<style is="custom-style">
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+    background-color: var(--paper-grey-200);
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 64px;
+    width: 100%;
+    background-color: #075E54;
+    @apply(--shadow-elevation-2dp);
+    transition: height 0.25s ease-out;
+}
+
+#status-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background-color: #054D44;
+}
+
+#title {
+    color: white;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 64px;
+    margin-left: 24px;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    transition: font-size 0.25s ease-out, line-height 0.25s ease-out;
+}
+
+#title span {
+    color: #0B9793;
+}
+
+#header.big {
+    height: 96px;
+}
+
+#header.big #title {
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 36px;
+}
+
+#header.big #title.center {
+    width: 164px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#chat {
+    height: 100%;
+    width: 100%;
+    padding-top: 96px;
+    border: 5px solid black;
+    background-color: #E0D9CF;
+    background-image: url(img/background.jpg);
+    background-size: auto 100%;
+    overflow: auto;
+}
+
+#chat .row {
+    clear: both;
+}
+
+#chat .message {
+    min-height: 32px;
+    background-color: #fff;
+    padding: 6px 12px;
+    margin: 4px 18px;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    max-width: 75%;
+    font-size: 19px;
+    line-height: 20px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#chat .message a {
+	text-decoration: none;
+	color: #1E92A4;
+}
+
+#chat .message .time {
+    color: #879977;
+    font-size: 14px;
+    line-height: 18px;
+    margin-left: 4px;
+    margin-top: 4px;
+    float: right;
+}
+
+#chat .message.out {
+    float: right;
+    background-color: #E1FFC7;
+}
+
+#chat .row.out + .row.out .message,
+#chat .row.in + .row.in .message {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+</style>
