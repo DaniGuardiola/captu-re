@@ -321,7 +321,7 @@ function getChat() {
 
 function loadMessages(messages) {
     var chat = getChat();
-    var msg, row, element, time, textOutput;
+    var msg, row, element, time, textOutput, lastElement, lastDirection;
     for (var i = 0; i < messages.length; i++) {
         msg = messages[i];
         row = document.createElement("div");
@@ -345,7 +345,13 @@ function loadMessages(messages) {
             row.classList.add("in");
         }
         chat.appendChild(row);
+        if (lastElement && lastDirection !== msg.direction) {
+            lastElement.classList.add("before");
+        }
+        lastElement = element;
+        lastDirection = msg.direction;
     }
+    lastElement.classList.add("before");
 }
 
 function init() {
