@@ -33,6 +33,7 @@ body {
     width: 100%;
     height: 32px;
     background-color: #054D44;
+    display: none;
 }
 
 #title {
@@ -55,17 +56,31 @@ body {
     height: 96px;
 }
 
+#header.small {
+    height: 56px;
+}
+
 #header.big #title {
     font-size: 48px;
     line-height: 48px;
     margin-top: 36px;
 }
 
-#header.big #title.center {
-    width: 164px;
+#header.small #title {
+    font-size: 36px;
+    line-height: 36px;
+    margin-top: 8px;
+}
+
+#header #title.center {
+    width: 122px;
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+#header.big #title.center {
+    width: 164px;
 }
 
 #chat {
@@ -99,8 +114,8 @@ body {
 }
 
 #chat .message a {
-	text-decoration: none;
-	color: #1E92A4;
+    text-decoration: none;
+    color: #1E92A4;
 }
 
 #chat .message .time {
