@@ -17,6 +17,7 @@ body {
 
 #header {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     height: 64px;
@@ -111,6 +112,11 @@ body {
     float: left;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#chat .message span.em {
+    position: relative;
+    top: 4px;
 }
 
 #chat .message a {

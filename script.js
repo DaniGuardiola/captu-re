@@ -312,8 +312,8 @@ var data = [{
     "date": "09\/05\/2016",
     "time": "17:49",
     "timezoneOffset": -120,
-    "text": "Pues apuntala para que no se olvide y ahora me la cuentas"
-}];
+    "text": "📕📙📔📗📘🛢\n   📕📙🐠📘🛢\n      📕📙📘🛢\n        📕🌈🛢\n           📕🛢\n              💎\n           🛢📕\n        🛢🌈📕\n      🛢📘📙📕\n   🛢📘🐠📙📕\n🛢📘📗📔📙📕\n📕📙📔📗📘🛢\n   📕📙🐠📘🛢\n      📕📙📘🛢\n        📕🌈🛢\n           📕🛢\n              💎\n           🛢📕\n        🛢🌈📕\n      🛢📘📙📕\n   🛢📘🐠📙📕\n🛢📘📗📔📙📕\n📕🚗👄👣💋🏮\n 🚗👄👣💋🏮🎒\n  👄👣💋🏮🎒📕\n   👣💋🏮🎒📕🚗\n💚  💋🏮🎒📕🚗👄\n   👣💋🏮🎒📕🚗\n  👄👣💋🏮🎒📕\n 🚗👄👣💋🏮🎒\n📕🚗👄👣💋🏮\n📕📙📔📗📘🛢\n   📕📙🐠📘🛢\n      📕📙📘🛢\n        📕🌈🛢\n           📕🛢\n              💎\n           🛢📕\n        🛢🌈📕\n      🛢📘📙📕\n   🛢📘🐠📙📕\n🛢📘📗📔📙📕\n📕📙📔📗📘🛢\n   📕📙🐠📘🛢\n      📕📙📘🛢\n        📕🌈🛢\n           📕🛢\n              💎\n           🛢📕\n        🛢🌈📕\n      🛢📘📙📕\n   🛢📘🐠📙📕\n🛢📘📗📔📙📕"
+}, { "direction": "out", "type": "chat", "datetime": "2016-05-09T20:19:00.000Z", "date": "09/05/2016", "time": "22:19", "timezoneOffset": -120, "text": "asdfasdf😃asdfasdf😃 asdfasdf😃asdfasdf😃asdf asdfasdf😃asdfasdf😃 asdfasdf😃asdfasdf😃asdf asdfasdf😃asdfasdf😃 asdfasdf😃asdfasdf😃asdf asdfasdf😃asdfasdf😃 asdfasdf😃asdfasdf😃asdf asdfasdf😃asdfasdf😃 asdfasdf😃asdfasdf😃asdf asdfasdf😃asdfasdf😃 asdfasdf😃asdfasdf😃asdf" }];
 
 function getChat() {
     return document.querySelector("#chat");
@@ -321,7 +321,7 @@ function getChat() {
 
 function loadMessages(messages) {
     var chat = getChat();
-    var msg, row, element, time;
+    var msg, row, element, time, textOutput;
     for (var i = 0; i < messages.length; i++) {
         msg = messages[i];
         row = document.createElement("div");
@@ -330,7 +330,9 @@ function loadMessages(messages) {
         element.classList.add("message");
         row.appendChild(element);
         if (msg.type === "chat") {
-            element.innerHTML = msg.text;
+            textOutput = minEmoji(msg.text.replace(/\n/g, "<br>").replace(/\s/g, '&thinsp;'));
+            element.innerHTML = textOutput;
+            //element.innerHTML = minEmoji(msg.text);
             time = document.createElement("span");
             time.textContent = msg.time;
             time.classList.add("time");
