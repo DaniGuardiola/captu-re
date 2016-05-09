@@ -232,7 +232,7 @@ var data = [{
     "date": "09\/05\/2016",
     "time": "17:46",
     "timezoneOffset": -120,
-    "text": "Si"
+    "text": "Si 💁🏾🙅🏾🙅🏾🙅🏾🙅🙅"
 }, {
     "direction": "in",
     "type": "chat",
@@ -332,7 +332,6 @@ function loadMessages(messages) {
         if (msg.type === "chat") {
             textOutput = minEmoji(msg.text.replace(/\n/g, "<br>").replace(/\s/g, '&thinsp;'));
             element.innerHTML = textOutput;
-            //element.innerHTML = minEmoji(msg.text);
             time = document.createElement("span");
             time.textContent = msg.time;
             time.classList.add("time");
